@@ -19,11 +19,11 @@ document.body.addEventListener("click",(e)=>{
   return (
     <div className='w-full px-4 h-[36px] bg-amazon_light text-white flex items-center'>
     <ul className='flex items-center gap-3'><li onClick={()=>setShow(!show)} className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 gap-1 '>< ListIcon/>All</li>
-    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100  '>Today's Deal</li>
-    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>Customer Service</li>
-    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>Gift Card</li>
-    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>Registry</li>
-    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>Sell</li></ul>
+    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 hidden mdl:inline-flex '>Today's Deal</li>
+    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100  hidden mdl:inline-flex '>Customer Service</li>
+    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100  hidden mdl:inline-flex '>Gift Card</li>
+    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100  hidden mdl:inline-flex '>Registry</li>
+    <li className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100  hidden mdl:inline-flex  '>Sell</li></ul>
     {
         show &&(
           <div className='w-full h-screen text-black fixed top-0 left-0 bg-amazon_blue bg-opacity-50'>

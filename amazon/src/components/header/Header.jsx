@@ -68,16 +68,16 @@ const allItem =[
 
 ]
   return (
-    <div className='w-full bg-amazon_blue'>
-  <div className='max-w-container  text-white px-4    flex items-center gap-4 py-3'>
+    <div className='w-full sticky top-0 z-50 bg-amazon_blue '>
+  <div className='max-w-container  text-white px-4    flex items-center gap-4 py-3 bg-amazon_blue'>
   <div className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>
     <img className='w-24 mt-2' src={logo} alt="" />
   </div>
-<div className='px-2 h-[80%] flex items-cente border border-transparent hover:border-white cursor-pointer duration-100'>
+<div className='px-2 h-[80%] flex items-cente border border-transparent hover:border-white cursor-pointer duration-100 hidden mdl:inline-flex'>
   <LocationOnIcon/>
   <p className='text-sm text-lightText font-light flex flex-col'>Deliver to {" "} <span className='text-sm font-semibold -mt-1 text-whiteText'>India</span></p>
 </div>
-<div  className='h-10 rounded-md flex flex-grow  relative '>
+<div  className='h-10 rounded-md hidden mdl:flex flex-grow  relative '>
   <span onClick={()=>setshowAll(!showAll)} className='h-full w-14 bg-gray-200 hover:bg-gray-300 border-2 cursor-pointer duration-300 text-sm text-amazon_blue  font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md'>All <span></span><ArrowDropDownIcon/></span>
   {
     showAll &&(
@@ -95,15 +95,15 @@ const allItem =[
       </div>
     )
   }
-  <input className='h-full text-base text-amazon_blue flex-grow outline-none border-none px-2'  type='text'/>
+  <input className='h-full text-base text-amazon_blue flex-grow outline-none border-none px-2 '  type='text'/>
   <span className='w-12 h-full flex items-center justify-center bg-amazon_yellow hover:bg-[#f3a847] duration-300 text-amazon_light cursor-pointer rounded-tr-md rounded-br-md'>
     <SearchIcon/>
   </span>
 </div>
-<div className='flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='text-sm text-lightText font-light'>Hello, sign in</p>
-<p className='text-sm font-semibold -mt-1 text-whiteText'>Accounts & List {" "}<span><ArrowDropDownIcon/></span></p>
+<div className='flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='mdl:text-xs text-sm text-white mdl:text-lightText font-light'>Hello, sign in</p>
+<p className='text-sm font-semibold -mt-1 text-whiteText hidden mdl:inline-flex'>Accounts & List {" "}<span><ArrowDropDownIcon/></span></p>
 </div>
-<div className='flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='text-xs text-lightText font-light'>Returns</p>
+<div className='hidden lgl:flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='text-xs text-lightText font-light'>Returns</p>
 <p className='text-sm font-semibold -mt-1 text-whiteText'>& Order</p>
 </div>
 <div className='flex  items-start justify-center px-2 h-[80%]  border border-transparent hover:border-white cursor-pointer duration-100 relative
