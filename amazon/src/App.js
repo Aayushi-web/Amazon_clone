@@ -6,9 +6,11 @@ import{
 import './App.css';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import Banner from './home/Banner';
+
 import Home from './pages/Home';
 import { productsData } from './api/api';
+import SignIn from './pages/SignIn';
+import Cart from './pages/Cart';
 const Layout =()=>{
   return(
     <div>
@@ -24,6 +26,8 @@ function App() {
    
     <Route path='/' element={<Layout/>}>
        <Route index element={<Home/>} loader={productsData} ></Route>
+       <Route path='/cart' element={<Cart/>}></Route>
+       <Route path="/signin" element={<SignIn/>}></Route>
    
     </Route>
    
