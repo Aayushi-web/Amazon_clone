@@ -5,8 +5,12 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import HeaderBottom from './HeaderBottom';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const Header = () => {
  const [showAll, setshowAll]= useState(false)
+ const products= useSelector((state)=>state.amazonReducer.products)
+ console.log(products)
 const allItem =[
   {
     id:1,
@@ -100,16 +104,18 @@ const allItem =[
     <SearchIcon/>
   </span>
 </div>
+<Link to={"/signin"}>
 <div className='flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='mdl:text-xs text-sm text-white mdl:text-lightText font-light'>Hello, sign in</p>
 <p className='text-sm font-semibold -mt-1 text-whiteText hidden mdl:inline-flex'>Accounts & List {" "}<span><ArrowDropDownIcon/></span></p>
 </div>
+</Link>
 <div className='hidden lgl:flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='text-xs text-lightText font-light'>Returns</p>
 <p className='text-sm font-semibold -mt-1 text-whiteText'>& Order</p>
 </div>
 <div className='flex  items-start justify-center px-2 h-[80%]  border border-transparent hover:border-white cursor-pointer duration-100 relative
  '>
   <ShoppingCartIcon/>
-  <p className='text-xs font-semibold mt-3 text-whiteText'>Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center'>0</span></p>
+  <p className='text-xs font-semibold mt-3 text-whiteText'>Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center'>{products.length > 0 ? products.length:0}</span></p>
 </div>
 
   </div>
