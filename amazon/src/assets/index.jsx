@@ -8,5 +8,5 @@ import flag from './flag.webp'
 import emptyCart from './emptyCart.png'
 import advertizement from '../assets/advertizement.jpg'
 export{
-    logo,bannerImgFive,bannerImgOne,bannerImgThree,flag,advertizement,bannerImgFour,bannerImgTwo
+    logo,bannerImgFive,bannerImgOne,bannerImgThree,flag,advertizement,bannerImgFour,bannerImgTwo,emptyCart
 }
