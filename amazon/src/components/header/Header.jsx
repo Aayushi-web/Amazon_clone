@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 const Header = () => {
  const [showAll, setshowAll]= useState(false)
- const products= useSelector((state)=>state.amazonReducer.products)
+ const products= useSelector((state)=>state.amazon.products)
  console.log(products)
 const allItem =[
   {
@@ -74,9 +74,11 @@ const allItem =[
   return (
     <div className='w-full sticky top-0 z-50 bg-amazon_blue '>
   <div className='max-w-container  text-white px-4    flex items-center gap-4 py-3 bg-amazon_blue'>
-  <div className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>
+ <Link to="/">
+ <div className='px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100 '>
     <img className='w-24 mt-2' src={logo} alt="" />
   </div>
+ </Link>
 <div className='px-2 h-[80%] flex items-cente border border-transparent hover:border-white cursor-pointer duration-100 hidden mdl:inline-flex'>
   <LocationOnIcon/>
   <p className='text-sm text-lightText font-light flex flex-col'>Deliver to {" "} <span className='text-sm font-semibold -mt-1 text-whiteText'>India</span></p>
@@ -112,11 +114,15 @@ const allItem =[
 <div className='hidden lgl:flex flex-col items-start justify-center px-2 h-[80%]  items-cente border border-transparent hover:border-white cursor-pointer duration-100 '><p className='text-xs text-lightText font-light'>Returns</p>
 <p className='text-sm font-semibold -mt-1 text-whiteText'>& Order</p>
 </div>
+<Link to="/cart">
 <div className='flex  items-start justify-center px-2 h-[80%]  border border-transparent hover:border-white cursor-pointer duration-100 relative
  '>
   <ShoppingCartIcon/>
-  <p className='text-xs font-semibold mt-3 text-whiteText'>Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center'>{products.length > 0 ? products.length:0}</span></p>
+  <p className='text-xs font-semibold mt-3 text-whiteText'>Cart <span className='absolute text-xs -top-1 left-6 font-semibold p-1 h-4 bg-[#f3a847] text-amazon_blue rounded-full flex justify-center items-center'>
+  {products.length > 0 ? products.length:0} 
+    </span></p>
 </div>
+</Link>
 
   </div>
   <HeaderBottom/>
