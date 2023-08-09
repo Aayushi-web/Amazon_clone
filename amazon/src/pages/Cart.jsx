@@ -21,7 +21,7 @@ const Cart = () => {
         <div className='w-full bg-gray-100 p-4'>
           {
             products.length > 0 ? (
-                <div className='container mx-auto h-auto grid grid-cols-5 gap-8'>
+                <div className='container mx-auto h-auto grid grid-cols-5 gap-8 '>
                 <div className='w-full bg-white px-4 col-span-4 '>
                     <div className='font-titleFont flex items-center  justify-between border-b-[1px] border-b-gray-400 py-3'>
                         <h2 className='text-xl font-medium' >Shopping cart</h2>
@@ -36,7 +36,7 @@ const Cart = () => {
 </div>
 <div className='w-3/5'>
     <h2 className='font-semibold text-lg'>{item.title}</h2>
-    <p className='pr-10 text-sm'>{item.description}</p>
+    <p className='pr-10 text-sm hidden mdl:inline-flex'>{item.description}</p>
     <p className='text-base'>Unit Price <span className=''>${item.price}</span></p>
     <div className='bg-[#F0F2F2] flex justify-center items-center gap-1 w-24 py-1 text-center drop-shadow-lg rounded-md'>
         <p>Qty:</p>
@@ -58,7 +58,7 @@ const Cart = () => {
                         <button className='px-10 py-2 bg-red-500 hover:bg-red-600 active:bg-red-500 text-white rounded-lg font-titleFont font-semibold text-lg tracking-wide '>Clear cart</button>
                     </div>
                 </div>
-                <div className='md:flex-inline sm:w-full bg-white h-52 col-span-1 flex 
+                <div className='md:flex-inline sm:w-full bg-white h-52 col-span-1 flex xs:col-span-2 xs:ml-4
                 item-center p-4 flex-col justify-center'>
                     <div className=''><p className='flex gap-2 items-start text-sm'><span><CheckCircleIcon className='bg-white text-green-500 rounded-full'/></span>Your Order is SAFE and FREE shipping Choose this option at checkout. See details...</p>
                   
@@ -66,8 +66,11 @@ const Cart = () => {
                     <div>
                         <p className='font-semibold px-10 py-1 flex items-center gap-2 justify-between '>Total: <span className='text-lg font-bold'>${totalPrice}</span></p>
                     </div>
+                     
                     <Link to={"/checkout"}>
+                    <div className='w-full'>
                     <button className='w-full font-titleFont font-medium text-base bg-gradient-to-tr from-yellow-400 to-yellow-200 border hover:from-yellow-300 hover:to-yellow border-yellow-500 hover:border-yellow-700 active:bg-gradient-to-bl active:from-yellow-500 active:to-yellow-500 duration-200 py-1.5 rounded-md mt-3'>Procced To Pay</button>
+                    </div>
                     </Link>
                 </div>
             </div>
